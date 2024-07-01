@@ -17,6 +17,6 @@ Route::post('password/reset', [PasswordResetController::class, 'reset'])->middle
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('logout',LogoutController::class);
     Route::post('email/verify/send', [VerifyEmailController::class, 'sendMail']);
-    Route::post('email/verify', [VerifyEmailController::class, 'verify'])->middleware('signed')->name('verify.email');
+    Route::post('email/verify/{user}', [VerifyEmailController::class, 'verify'])->middleware('signed')->name('verify.email');
 
 });

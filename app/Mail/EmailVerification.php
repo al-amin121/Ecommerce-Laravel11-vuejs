@@ -14,15 +14,30 @@ class EmailVerification extends Mailable
     use Queueable, SerializesModels;
 
     public $url;
-    /**
+     /**
      * Create a new message instance.
+     *
+     * @param string $url
      */
-    public function __construct($user)
+    public function __construct($url)
 
     {
-        $generate = \URL::temporarySignedRoute('verify.email', now()->addMinute(30), ['email' => $user->email]);
-        $this->url = str_replace(env('APP_URL'), env('FRONTEND_URL'), $generate);
+        // $generate = \URL::temporarySignedRoute('verify.email', now()->addMinute(30), ['email' => $user->email]);
+        // // $this->url = str_replace(env('APP_URL'), env('FRONTEND_URL'), $generate);
+        // $this->url = env('APP_URL') . $generate;
+        // return route('verify.email', ['user' => $user-id]);
+        $this->url = $url;
 
+    }
+     /**
+     * Build the message.
+     *
+     * @return $this
+     */
+    public function build()
+    {
+        return $this->subject('Email Verification')
+                    ->markdown('emails.email_verification');
     }
 
     /**

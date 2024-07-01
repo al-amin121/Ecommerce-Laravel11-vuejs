@@ -3,10 +3,11 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import GuestLayout from '@/components/Layouts/GuestLayout.vue';
+import'@/composables/useAxios.js'
 // import  VSelect  from "vue-select";
 // import "vue-select/dist/vue-select.css";
 // import 'flowbite';
-// import '../../node_modules/flowbite-vue/dist/index.css'
+import '../../node_modules/flowbite-vue/dist/index.css'
 import App from './App.vue'
 import router from './router'
 

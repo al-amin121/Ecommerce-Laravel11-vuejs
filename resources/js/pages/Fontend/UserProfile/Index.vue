@@ -1,5 +1,7 @@
 <template>
     <GuestLayout>
-        Dashboard
+        <div>
+           User Dashboard
+        </div>
     </GuestLayout>
 </template>

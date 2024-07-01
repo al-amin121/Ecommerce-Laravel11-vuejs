@@ -18,13 +18,13 @@ class PasswordResetController extends Controller
         $url = \URL::temporarySignedRoute('password.reset', now()->addMinute(30), ['email' => $request->email]);
 
         //this is for convert bakend url to fontend url
-        $url = str_replace(env('APP_URL'), env('FRONTEND_URL'), $url);
+        $url = env('APP_URL');
 
         Mail::to($request->email)->send(new ResetPasswordLink($url));
 
         return response()->json([
             'message' => 'Reset Password link sent your email'
-        ]);
+        ], 200);
     }
 
     public function reset(ResetPasswordRequest $request){

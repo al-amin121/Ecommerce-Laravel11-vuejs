@@ -2,7 +2,6 @@
 # Email Verification
 
 
-
 <x-mail::button :url="$url">
     Email Verificationon
 </x-mail::button>

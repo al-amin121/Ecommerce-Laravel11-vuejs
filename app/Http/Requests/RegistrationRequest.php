@@ -26,7 +26,7 @@ class RegistrationRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'email'=> ['required', 'email' , 'string', Rule::unique(User::class,'email')],
-            'password' => 'required|string|min:8|confirmed'
+            'password' => 'required|string|min:8|confirmed',
         ];
     }
 }
