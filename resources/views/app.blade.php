@@ -9,6 +9,6 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
         
     </head>
-    <body id="app" class="overflow-x-hidden" >
+    <body id="app" class="overflow-x-hidden font-pop" >
     </body>
 </html>

@@ -1,9 +1,9 @@
 <template>
-    <div>
+    <div class="w-full h-full">
         <Header>
             <Header/>
         </header>
-        <main>
+        <main class="container w-full">
             <slot/>
         </main>
         <footer>

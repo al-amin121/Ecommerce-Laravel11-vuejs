@@ -8,12 +8,19 @@ export default {
     'node_modules/flowbite/**/*.{js,jsx,ts,tsx}'  
   ],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       colors: {
         'primary':'#00FF66',
         'Secondary':'#F5F5F5',
 
         
+      },
+      fontFamily: {
+        pop: 'Poppins',
+        Inter: 'Inter',
       },
     },
   },

@@ -11,6 +11,21 @@ const router = createRouter({
       component: () => import('@/pages/Fontend/Index.vue')
     },
     {
+      path: '/shop',
+      name: 'Shop',
+      component: () => import('@/pages/Fontend/Shop.vue')
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: () => import('@/pages/Fontend/About.vue')
+    },
+    {
+      path: '/contact',
+      name: 'Contact',
+      component: () => import('@/pages/Fontend/Contact.vue')
+    },
+    {
       path: '/login',
       name: 'Login',
       meta:{layout:"auth"},
