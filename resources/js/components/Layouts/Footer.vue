@@ -1,12 +1,12 @@
 <template>
     <div class="w-full bg-black text-white  py-10 px-20  flex max-sm:flex-col gap-10 justify-between ">
             <div class="lg:w-1/2 md:w-1/2 w-full">
-                <h1 class="font-semibold text-xl mb-5">Exclusive</h1>
+                <h1 class="font-semibold text-xl mb-5 hover:underline hover:decoration-primary">Exclusive</h1>
                 <h4 class="my-5 font-normal text-base">Subscribe</h4>
                 <p class="text-sm font-light">Get 10% off your first order</p>
                 <div class="flex items-center my-5">
                     <input type="email"  aria-describedby="helper-text-explanation" class="bg-gray-50 border  border-gray-300 h-9 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="email@email.com">
-                    <button class="bg-gray-600 -ms-5 h-9 w-10 cursor-pointer flex justify-center items-center text-white rounded-r">
+                    <button class="bg-primary -ms-5 h-9 w-10 cursor-pointer flex justify-center items-center text-white rounded-r">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 ">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
                         </svg>
@@ -14,28 +14,28 @@
                 </div>
             </div>
             <div class="lg:w-1/2 md:w-1/2 w-full font-light text-base">
-                <h1 class="font-semibold text-xl mb-5">Support</h1>
+                <h1 class="font-semibold text-xl mb-5 hover:underline hover:decoration-primary">Support</h1>
                 <p class="my-3">111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</p>
                 <p class="my-3">email@gmail.com</p>
                 <p >+88015-88888-9999</p>
 
             </div>
             <div class="lg:w-1/2 md:w-1/2 w-full flex flex-col font-light text-base">
-                <h1 class="font-semibold text-xl mb-5">Account</h1>
+                <h1 class="font-semibold text-xl mb-5 hover:underline hover:decoration-primary ">Account</h1>
                 <router-link to="/profile" class="my-1">My Account</router-link>
                 <router-link to="/login" class="my-1">Login / Register</router-link>
                 <router-link to="/profile" class="my-1">Cart</router-link>
                 <router-link to="/shop" class="my-1">Shop</router-link>
             </div>
             <div class="lg:w-1/2 md:w-1/2 w-full flex flex-col font-light text-base">
-                <h1 class="font-semibold text-xl mb-5">Quick Link</h1>
+                <h1 class="font-semibold text-xl mb-5 hover:underline hover:decoration-primary">Quick Link</h1>
                 <router-link to="/profile" class="my-1">Privacy Policy</router-link>
                 <router-link to="/login" class="my-1">Terms Of Use</router-link>
                 <router-link to="/profile" class="my-1">FAQ</router-link>
                 <router-link to="/contact" class="my-1">Contact</router-link>
             </div>
             <div class="lg:w-1/2 md:w-1/2 w-full">
-                <h1 class="font-semibold text-xl mb-5">Quick Link</h1>
+                <h1 class="font-semibold text-xl mb-5 hover:underline hover:decoration-primary">Download App</h1>
                 <p class="text-sm font-light">Save $3 with App New User Only</p>
                 <div class="flex gap-1 mt-1">
                   <img src="@/assets/Icon/qurcode.jpeg" class="text-white h-[85px]">

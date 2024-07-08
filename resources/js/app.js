@@ -3,6 +3,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import GuestLayout from '@/components/Layouts/GuestLayout.vue';
+import AppLayout from '@/components/Layouts/AppLayout.vue';
 import'@/composables/useAxios.js'
 // import  VSelect  from "vue-select";
 // import "vue-select/dist/vue-select.css";
@@ -14,6 +15,8 @@ import router from './router'
 const pinia = createPinia()
 const app = createApp(App)
     .component('GuestLayout', GuestLayout) 
+    .component('AppLayout', AppLayout)
     .use(router)
     .use(pinia)
  app.mount('#app')
+ 

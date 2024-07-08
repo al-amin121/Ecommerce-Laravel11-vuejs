@@ -1,7 +1,7 @@
 <template>
-    <GuestLayout>
+    <AppLayout>
         <div>
-            Dashboard
+            Dashboards
         </div>
-    </GuestLayout>
+    </AppLayout>
 </template>

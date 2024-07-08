@@ -7,7 +7,7 @@
                     <div class=" ps-10 py-5 flex-col justify-between " >
                         <p class="font-Inter font-semibold text-2xl text-white align-text-bottom ">Categories</p>
                         <p class="font-medium text-base py-3 text-white ">Black and White version of the PS5 coming out on sale. </p>
-                        <button class="font-medium text-base underline mt-5 text-white ">
+                        <button class="font-medium text-base underline decoration-primary mt-5 text-white ">
                             Shop Now
                         </button>
                     </div>
@@ -24,7 +24,7 @@
                     <div class="ps-10 py-5 flex-col justify-between " >
                         <p class="font-Inter font-semibold text-2xl text-white align-text-bottom ">Women’s Collections</p>
                         <p class="font-medium text-base py-3 text-white ">Featured woman collections that give you another vibe. </p>
-                        <button class="font-medium text-base underline mt-5 text-white ">
+                        <button class="font-medium text-base underline decoration-primary  mt-5 text-white ">
                             Shop Now
                         </button>
                     </div>
@@ -40,7 +40,7 @@
                         <div class="p-5 flex-col justify-between " >
                             <p class="font-Inter font-semibold text-2xl text-white align-text-bottom ">Speakers</p>
                             <p class="font-medium text-base  text-white py-2 ">Amazon wireless speakers</p>
-                            <button class="font-medium text-base underline text-white ">
+                            <button class="font-medium text-base underline decoration-primary text-white ">
                                 Shop Now
                             </button>
                         </div>
@@ -54,7 +54,7 @@
                         <div class="p-5 flex-col justify-between " >
                             <p class="font-Inter font-semibold text-2xl text-white align-text-bottom ">Perfume</p>
                             <p class="font-medium text-base  text-white py-2 ">GUCCI INTENSE OUD EDP</p>
-                            <button class="font-medium text-base underline text-white ">
+                            <button class="font-medium text-base underline decoration-primary text-white ">
                                 Shop Now
                             </button>
                         </div>
