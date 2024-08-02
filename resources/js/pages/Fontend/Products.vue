@@ -1,4 +1,70 @@
-
+<script setup>
+  import { ref } from 'vue'
+  import Products from "../../components/ProductCard.vue"
+  import {
+    Dialog,
+    DialogPanel,
+    Disclosure,
+    DisclosureButton,
+    DisclosurePanel,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuItems,
+    TransitionChild,
+    TransitionRoot,
+  } from '@headlessui/vue'
+  import { XMarkIcon } from '@heroicons/vue/24/outline'
+  import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/vue/20/solid'
+  
+ 
+  const subCategories = [
+    { name: 'Totes', href: '#' },
+    { name: 'Backpacks', href: '#' },
+    { name: 'Travel Bags', href: '#' },
+    { name: 'Hip Bags', href: '#' },
+    { name: 'Laptop Sleeves', href: '#' },
+  ]
+  const filters = [
+    {
+      id: 'color',
+      name: 'Color',
+      options: [
+        { value: 'white', label: 'White', checked: false },
+        { value: 'beige', label: 'Beige', checked: false },
+        { value: 'blue', label: 'Blue', checked: true },
+        { value: 'brown', label: 'Brown', checked: false },
+        { value: 'green', label: 'Green', checked: false },
+        { value: 'purple', label: 'Purple', checked: false },
+      ],
+    },
+    {
+      id: 'category',
+      name: 'Category',
+      options: [
+        { value: 'new-arrivals', label: 'New Arrivals', checked: false },
+        { value: 'sale', label: 'Sale', checked: false },
+        { value: 'travel', label: 'Travel', checked: true },
+        { value: 'organization', label: 'Organization', checked: false },
+        { value: 'accessories', label: 'Accessories', checked: false },
+      ],
+    },
+    {
+      id: 'size',
+      name: 'Size',
+      options: [
+        { value: '2l', label: '2L', checked: false },
+        { value: '6l', label: '6L', checked: false },
+        { value: '12l', label: '12L', checked: false },
+        { value: '18l', label: '18L', checked: false },
+        { value: '20l', label: '20L', checked: false },
+        { value: '40l', label: '40L', checked: true },
+      ],
+    },
+  ]
+  
+  const mobileFiltersOpen = ref(false)
+  </script>
 <template>
     <GuestLayout>
         <div class="h-60 max-sm:hidden text-white tracking-widest w-full flex justify-center items-center font-extrabold text-9xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
@@ -98,33 +164,6 @@
                             <div class="lg:col-span-4 grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10">
                                 <!--  content -->
                                 <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
-                                <Products/>
                             </div>
                         </div>
                     </section>
@@ -134,70 +173,4 @@
     </GuestLayout>
   </template>
   
-  <script setup>
-  import { ref } from 'vue'
-  import Products from "../../components/ProductCard.vue"
-  import {
-    Dialog,
-    DialogPanel,
-    Disclosure,
-    DisclosureButton,
-    DisclosurePanel,
-    Menu,
-    MenuButton,
-    MenuItem,
-    MenuItems,
-    TransitionChild,
-    TransitionRoot,
-  } from '@headlessui/vue'
-  import { XMarkIcon } from '@heroicons/vue/24/outline'
-  import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/vue/20/solid'
   
- 
-  const subCategories = [
-    { name: 'Totes', href: '#' },
-    { name: 'Backpacks', href: '#' },
-    { name: 'Travel Bags', href: '#' },
-    { name: 'Hip Bags', href: '#' },
-    { name: 'Laptop Sleeves', href: '#' },
-  ]
-  const filters = [
-    {
-      id: 'color',
-      name: 'Color',
-      options: [
-        { value: 'white', label: 'White', checked: false },
-        { value: 'beige', label: 'Beige', checked: false },
-        { value: 'blue', label: 'Blue', checked: true },
-        { value: 'brown', label: 'Brown', checked: false },
-        { value: 'green', label: 'Green', checked: false },
-        { value: 'purple', label: 'Purple', checked: false },
-      ],
-    },
-    {
-      id: 'category',
-      name: 'Category',
-      options: [
-        { value: 'new-arrivals', label: 'New Arrivals', checked: false },
-        { value: 'sale', label: 'Sale', checked: false },
-        { value: 'travel', label: 'Travel', checked: true },
-        { value: 'organization', label: 'Organization', checked: false },
-        { value: 'accessories', label: 'Accessories', checked: false },
-      ],
-    },
-    {
-      id: 'size',
-      name: 'Size',
-      options: [
-        { value: '2l', label: '2L', checked: false },
-        { value: '6l', label: '6L', checked: false },
-        { value: '12l', label: '12L', checked: false },
-        { value: '18l', label: '18L', checked: false },
-        { value: '20l', label: '20L', checked: false },
-        { value: '40l', label: '40L', checked: true },
-      ],
-    },
-  ]
-  
-  const mobileFiltersOpen = ref(false)
-  </script>

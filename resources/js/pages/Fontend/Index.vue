@@ -8,9 +8,11 @@
  import AddBanner from "@/components/AddBanner.vue";
  import OurProducts from "@/components/OurProducts.vue";
  import FeaturedAdds from "@/components/FeaturedAdds.vue";
+
 </script>
 <template>
     <GuestLayout>
+
         <!-----------Hero section ------------------->
         <div class="flex gap-2 w-full  mt-2">
             <div class="bg-white text-black w-60 py-5 border-r border-gray-300 shadow">
@@ -41,6 +43,9 @@
                 <p class="text-lg font-semibold text-primary">Categories</p>
             </div>
             <Categories/>
+            @php
+            echo env('APP_NAME');
+            @endphp
             <!-----------Categories end---------------->
             <hr class="mt-5 mb-10">
             <!-----------Best Selling Products start---------------->
@@ -69,7 +74,7 @@
             <FeaturedAdds/>
             <!-----------------Featured procuts adds end--------------------------->
             <!-----------------service start--------------------------->
-           
+
             <div class="bg-white py-24 sm:py-32">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
@@ -92,7 +97,7 @@
                 </div>
             </div>
             <!-----------------service end--------------------------->
-            
+
         </div>
     </GuestLayout>
 </template>

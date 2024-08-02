@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import {useAuthStore} from "@/stores/useAuthStore.js";
 import { useRouter } from "vue-router";
-import { FwbAlert } from 'flowbite-vue';
 
 
 const auth = useAuthStore();
@@ -15,14 +14,14 @@ const successMessage = ref('');
 const form = ref({
   email: null,
   password: null,
-  
+
 });
 
 const onLogin = async () => {
     errorMessage.value = '';
     successMessage.value = '';
     auth.error = null;
-  
+
   try {
     await auth.login(form.value);
     if(auth?.user?.type ===1){
@@ -33,12 +32,12 @@ const onLogin = async () => {
     }
     if (auth.error?.response?.status === 401) {
         errorMessage.value = auth.error.response.data.message;
-        
+
     }
-    
+
   } catch (error) {
     console.error("Error during login:", error);
-    
+
   }
 }
 
@@ -49,22 +48,22 @@ const handelLogout =  ()=>{
 
 </script>
 <template>
- 
+
         <div class="flex min-h-full flex-1 flex-col justify-center mt-10 mx-auto w-1/3 shadow-lg px-6 py-12 lg:px-8">
             <div class="sm:mx-auto sm:w-full sm:max-w-sm">
                 <!-- <p class="text-red-500 text-sm" v-if="auth.error.response.status === 401">{{ auth.error.response.data.message}}</p> -->
-             
+
                 <img class="mx-auto h-10 w-auto" src="@/assets/logo/OnlineShop.png" alt="Your Company" />
                 <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to Admin</h2>
             </div>
-            
+
             <fwb-alert closable icon type="danger" class="font-semibold text-red-700" v-if="errorMessage">
                 {{ errorMessage }}
             </fwb-alert>
-            
+
             <div class="mt-10 sm:mx-auto space-y-6 sm:w-full sm:max-w-sm">
                 <form @submit.prevent = "onLogin" >
-                   
+
                     <div>
                         <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                         <div class="mt-2">
@@ -72,7 +71,7 @@ const handelLogout =  ()=>{
                         </div>
                         <p class="text-red-500 text-sm" v-if="auth?.error?.response?.data?.errors?.email">{{ auth?.error?.response?.data?.errors?.email[0]}}</p>
                     </div>
-                   
+
                     <div>
                         <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
                         <div class="mt-2">
@@ -87,5 +86,5 @@ const handelLogout =  ()=>{
                 </form>
             </div>
         </div>
-   
+
 </template>

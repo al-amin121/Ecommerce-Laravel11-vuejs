@@ -1,3 +1,55 @@
+<script setup>
+  import { ref } from 'vue'
+  import SearchBar from '../SearchBar.vue';
+  import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
+  import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/vue/24/outline';
+  import { useRoute } from 'vue-router';
+  import {useAuthStore} from "@/stores/useAuthStore.js";
+  
+import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
+
+const isOpen = ref(false);
+  const auth = useAuthStore();
+
+  const route = useRoute();
+
+  const handelLogout = () =>{
+    auth.logout();
+    router.push({ path: "/" });
+  }
+  const navigation = [
+    { name: 'Home', href: '/', current: route.path === '/' },
+    { name: 'Products', href: '/products', current: route.path === '/products' },
+    { name: 'About', href: '/about', current: route.path === '/about' },
+    { name: 'Contact US', href: '/contact', current: route.path === '/contact' },
+  ]
+
+  const products = [
+  {
+    id: 1,
+    name: 'Throwback Hip Bag',
+    href: '#',
+    color: 'Salmon',
+    price: '$90.00',
+    quantity: 1,
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
+    imageAlt: 'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+  },
+  {
+    id: 2,
+    name: 'Medium Stuff Satchel',
+    href: '#',
+    color: 'Blue',
+    price: '$32.00',
+    quantity: 1,
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
+    imageAlt:
+      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
+  },
+  
+]
+  </script>
+
 <template>
     <div class="max-sm:hidden w-full text-white bg-black py-2 flex justify-center items-center">
         <h1 class="font-sans text-base">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50% ! <span class="underline font-semibold tracking-wide  ms-3"><router-link to="/shop">ShopNow</router-link></span></h1>
@@ -17,7 +69,7 @@
           <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div class="flex flex-shrink items-center ">
                 <router-link to="/">
-                    <img class="h-10 w-auto" src="@/assets/logo/OnlineShop.png" alt="Your Company" />
+                    <img class="h-10 w-auto" src="@/assets/logo/OnlineShop.png" alt="Your Company Logo" />
                 </router-link>
             </div>
             <div class="hidden sm:ml-6 sm:block">
@@ -43,9 +95,9 @@
             <Menu  as="div" class="relative ">
                 <div v-if="auth?.user?.type === 0">
                     <MenuButton class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary">
-                    <span class="absolute -inset-1.5"/>
-                    <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="@/assets/Icon/user.png" alt="" />
+                      <span class="absolute -inset-1.5"/>
+                      <span class="sr-only">Open user menu</span>
+                      <img class="h-8 w-8 rounded-full" src="@/assets/Icon/user.png" alt="" />
                     </MenuButton>
                 </div>
                 <div v-else class="font-semibold lg:text-xl md:text-base text-sm flex justify-center items-center shadow-2xl px-2 bg-slate-200  rounded-md py-1 text-black" >
@@ -164,56 +216,3 @@
         </TransitionRoot>
   </template>
   
-  <script setup>
-  import { ref } from 'vue'
-  import SearchBar from '../SearchBar.vue';
-  import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
-  import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/vue/24/outline';
-  import { useRoute } from 'vue-router';
-  import {useAuthStore} from "@/stores/useAuthStore.js";
-  
-import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
-
-const isOpen = ref(false);
-  const auth = useAuthStore();
-
-  const route = useRoute();
-
-  const handelLogout = () =>{
-    auth.logout();
-    router.push({ path: "/" });
-  }
-  const navigation = [
-    { name: 'Home', href: '/', current: route.path === '/' },
-    { name: 'Products', href: '/products', current: route.path === '/products' },
-    { name: 'About', href: '/about', current: route.path === '/about' },
-    { name: 'Contact US', href: '/contact', current: route.path === '/contact' },
-  ]
-
-  const products = [
-  {
-    id: 1,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    color: 'Salmon',
-    price: '$90.00',
-    quantity: 1,
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt: 'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-  {
-    id: 2,
-    name: 'Medium Stuff Satchel',
-    href: '#',
-    color: 'Blue',
-    price: '$32.00',
-    quantity: 1,
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
-    imageAlt:
-      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
-  },
-  
-]
-
-
-  </script>
